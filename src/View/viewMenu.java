@@ -21,8 +21,14 @@ public class viewMenu extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(this);
         controller = new ControllerUser();
+        putTable();
+        
     }
 
+    private void putTable(){
+        String[] columns = {"ID", "NAME", "DATE BORN"};
+        controller.updateTable(jTable1, columns);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -128,7 +134,7 @@ public class viewMenu extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "NAME", "DATE BORN"
+
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -208,11 +214,18 @@ public class viewMenu extends javax.swing.JFrame {
         User user = new User(id, name, dateBorn);
         if(controller.pushUser(user, id)){
             JOptionPane.showMessageDialog(null, "Done");
+            clean();
+            putTable();
         }else{
             JOptionPane.showMessageDialog(null, "Ya se encuentra registrado");
         }
     }//GEN-LAST:event_btnPushActionPerformed
 
+    private void clean(){
+        txtId.setText(" ");
+        txtName.setText(" ");
+        jDateChooser1.setDate(null);
+    }
     /**
      * @param args the command line arguments
      */

@@ -3,6 +3,8 @@ package Controller;
 import Model.User;
 import Model.VectorStack;
 import Singleton.Singleton;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 
 public class ControllerUser {
@@ -32,5 +34,16 @@ public class ControllerUser {
         }
         return false;
     }
-
+    
+    public void updateTable(JTable table, String[] columns){
+        DefaultTableModel model = new DefaultTableModel(columns, 0);
+        table.setModel(model);
+        for(int i = 0; userStack != null && i < userStack.getSize(); i++){
+            if(userStack.getIndex(i) instanceof User){
+                User aux = (User) userStack.getIndex(i);
+                Object[] register = {aux.getId(), aux.getName(), aux.getDateBorn()};
+                model.addRow(register);
+            }
+        }
+    }
 }
