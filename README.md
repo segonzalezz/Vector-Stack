@@ -1,10 +1,10 @@
 # Vector stack
-There are two forms to make the Data Structure. The first would be with a Vector
+There are two forms to make the Stack Data Structure. The first would be with a Vector
 where the first class that u would be make:
 ```java
-public class HelloWorld {
-public static void main(String[] args) {
-System.out.println("Hello, World!");
-}
+public class vectorClass <T>{
+  private Object[] array;
+  private int size;
+  private static int arraySize = 10;
 }
 ```
