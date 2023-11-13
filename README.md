@@ -20,6 +20,7 @@ And respective gets and the others methods:
   public int getSize(){
   return size;
   }
+
   public T getIndex(int index){
   if(index >= 0 && index < size){
   return (T) array[index];
