@@ -23,6 +23,20 @@ public class ControllerUser {
         return false;
     }
     
+    public boolean popUser(String id){
+        if(!checkUser(id)){
+            for(int i = 0; i< userStack.getSize();  i++){
+                User user = userStack.getIndex(i);
+                if(user.getId().equals(id)){
+                    userStack.pop();
+                    Singleton.getInstance().writeUser(userStack);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    
     public boolean checkUser(String id) {
         if (userStack != null) {
             for (int i = 0; i < userStack.getSize(); i++) {

@@ -151,6 +151,11 @@ public class viewMenu extends javax.swing.JFrame {
         btnPop.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         btnPop.setText("Pop");
         btnPop.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnPop.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPopActionPerformed(evt);
+            }
+        });
 
         btnPeek.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         btnPeek.setText("Peek");
@@ -220,6 +225,15 @@ public class viewMenu extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Ya se encuentra registrado");
         }
     }//GEN-LAST:event_btnPushActionPerformed
+
+    private void btnPopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPopActionPerformed
+        String id = txtId.getText();
+        if(controller.popUser(id)){
+            JOptionPane.showMessageDialog(null, "Remove user: " + id);
+        }else{
+            JOptionPane.showMessageDialog(null, "Don´t can remove");
+        }
+    }//GEN-LAST:event_btnPopActionPerformed
 
     private void clean(){
         txtId.setText(" ");
