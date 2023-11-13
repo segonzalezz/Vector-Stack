@@ -28,7 +28,7 @@ public class Singleton {
             FileOutputStream file = new FileOutputStream("users.dat");
             ObjectOutputStream writer = new ObjectOutputStream(file);
             writer.writeObject(userStack);
-            System.out.println("Se escribio usuario");
+            //System.out.println("Write User");
         } catch (IOException ex) {
             ex.printStackTrace();
         }

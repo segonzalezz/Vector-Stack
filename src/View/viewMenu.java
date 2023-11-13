@@ -17,18 +17,20 @@ import javax.swing.JOptionPane;
 public class viewMenu extends javax.swing.JFrame {
 
     ControllerUser controller;
+
     public viewMenu() {
         initComponents();
         setLocationRelativeTo(this);
         controller = new ControllerUser();
         putTable();
-        
+
     }
 
-    private void putTable(){
+    private void putTable() {
         String[] columns = {"ID", "NAME", "DATE BORN"};
-        controller.updateTable(jTable1, columns);
+        controller.updateTable(jTable, columns);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -49,7 +51,7 @@ public class viewMenu extends javax.swing.JFrame {
         txtName = new javax.swing.JTextField();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTable = new javax.swing.JTable();
         btnPush = new javax.swing.JButton();
         btnPop = new javax.swing.JButton();
         btnPeek = new javax.swing.JButton();
@@ -128,8 +130,8 @@ public class viewMenu extends javax.swing.JFrame {
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
-        jTable1.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTable.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -137,7 +139,7 @@ public class viewMenu extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTable);
 
         btnPush.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         btnPush.setText("Push");
@@ -214,32 +216,38 @@ public class viewMenu extends javax.swing.JFrame {
         String id = txtId.getText();
         String name = txtName.getText();
         Date selectDate = jDateChooser1.getDate();
-        SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");        
+        SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
         String dateBorn = formatoFecha.format(selectDate);
         User user = new User(id, name, dateBorn);
-        if(controller.pushUser(user, id)){
+        if (controller.pushUser(user, id)) {
             JOptionPane.showMessageDialog(null, "Done");
             clean();
             putTable();
-        }else{
-            JOptionPane.showMessageDialog(null, "Ya se encuentra registrado");
+        } else {
+            JOptionPane.showMessageDialog(null, "It is already registered");
         }
     }//GEN-LAST:event_btnPushActionPerformed
 
     private void btnPopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPopActionPerformed
-        String id = txtId.getText();
-        if(controller.popUser(id)){
-            JOptionPane.showMessageDialog(null, "Remove user: " + id);
-        }else{
-            JOptionPane.showMessageDialog(null, "Don´t can remove");
+        int selectedRow = jTable.getSelectedRow();
+        if (selectedRow != -1) {
+            String id = (String) jTable.getValueAt(selectedRow, 0);
+            boolean remove = controller.popUser(id);
+            if (remove) {
+                JOptionPane.showMessageDialog(null, "Remove");
+                putTable();
+            } else {
+                JOptionPane.showMessageDialog(null, "Can´t remove");
+            }
         }
     }//GEN-LAST:event_btnPopActionPerformed
 
-    private void clean(){
+    private void clean() {
         txtId.setText(" ");
         txtName.setText(" ");
         jDateChooser1.setDate(null);
     }
+
     /**
      * @param args the command line arguments
      */
@@ -288,7 +296,7 @@ public class viewMenu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables

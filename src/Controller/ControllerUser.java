@@ -24,7 +24,7 @@ public class ControllerUser {
     }
     
     public boolean popUser(String id){
-        if(!checkUser(id)){
+        if(checkUser(id)){
             for(int i = 0; i< userStack.getSize();  i++){
                 User user = userStack.getIndex(i);
                 if(user.getId().equals(id)){
