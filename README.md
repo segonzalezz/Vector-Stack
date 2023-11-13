@@ -9,10 +9,19 @@ public class VectorStack <T>{
   private static int arraySize = 10;
 }
 ```
-And the constructor put:
+And the constructor u can placed:
 ```java
   public VectorStack(){
   array = new Object[arraySize];
   size = 0;
 ```
 And respective gets and the others methods:
+```java
+  public int getSize(){
+  return size;
+  }
+  public T getIndex(int index){
+  if(index >= 0 && index < size){
+  return (T) array[index];
+  }else{
+  throw new IndexOutOfBoundsException("Index out of bounds");
