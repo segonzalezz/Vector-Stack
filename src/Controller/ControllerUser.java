@@ -9,8 +9,10 @@ import javax.swing.table.DefaultTableModel;
 
 public class ControllerUser {
     private VectorStack<User> userStack;
+    DefaultTableModel jTable;
     
     public ControllerUser(){
+        this.jTable = jTable;
         userStack = Singleton.getInstance().readUser();
     }
     
@@ -47,6 +49,21 @@ public class ControllerUser {
             }
         }
         return false;
+    }
+    
+    public void peekUser(JTable table, String[] columns){
+        DefaultTableModel model = (DefaultTableModel) table.getModel();
+        while (model.getRowCount() > 0) {
+            model.removeRow(0);
+        }
+        if(!userStack.isEmpty()){
+            User peekedUser = userStack.peek();
+            Object[] register = {peekedUser.getId(), peekedUser.getName(), peekedUser.getDateBorn()};
+            model.addRow(register);
+            model.fireTableDataChanged();
+        }else{
+            System.out.println("The stack is empty");
+        }
     }
     
     public void updateTable(JTable table, String[] columns){

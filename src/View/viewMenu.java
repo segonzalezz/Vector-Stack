@@ -23,7 +23,6 @@ public class viewMenu extends javax.swing.JFrame {
         setLocationRelativeTo(this);
         controller = new ControllerUser();
         putTable();
-
     }
 
     private void putTable() {
@@ -55,6 +54,7 @@ public class viewMenu extends javax.swing.JFrame {
         btnPush = new javax.swing.JButton();
         btnPop = new javax.swing.JButton();
         btnPeek = new javax.swing.JButton();
+        btnUpdate = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -162,6 +162,20 @@ public class viewMenu extends javax.swing.JFrame {
         btnPeek.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         btnPeek.setText("Peek");
         btnPeek.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnPeek.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPeekActionPerformed(evt);
+            }
+        });
+
+        btnUpdate.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        btnUpdate.setText("Update");
+        btnUpdate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -173,7 +187,9 @@ public class viewMenu extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 102, Short.MAX_VALUE)
+                        .addGap(0, 24, Short.MAX_VALUE)
+                        .addComponent(btnUpdate)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnPeek)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnPop)
@@ -192,7 +208,8 @@ public class viewMenu extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnPush)
                     .addComponent(btnPop)
-                    .addComponent(btnPeek))
+                    .addComponent(btnPeek)
+                    .addComponent(btnUpdate))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14))
@@ -242,6 +259,15 @@ public class viewMenu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnPopActionPerformed
 
+    private void btnPeekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPeekActionPerformed
+        String[] columns = {"ID", "NAME", "DATE BORN"};
+        controller.peekUser(jTable, columns);
+    }//GEN-LAST:event_btnPeekActionPerformed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        putTable();
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
     private void clean() {
         txtId.setText(" ");
         txtName.setText(" ");
@@ -287,6 +313,7 @@ public class viewMenu extends javax.swing.JFrame {
     private javax.swing.JButton btnPeek;
     private javax.swing.JButton btnPop;
     private javax.swing.JButton btnPush;
+    private javax.swing.JButton btnUpdate;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
