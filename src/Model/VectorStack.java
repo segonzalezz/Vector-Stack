@@ -1,6 +1,8 @@
 package Model;
 
-public class VectorStack <T> {
+import java.io.Serializable;
+
+public class VectorStack <T> implements Serializable{
     private Object[] array;
     private int size;
     private static int arraySize = 10;

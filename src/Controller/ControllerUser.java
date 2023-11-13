@@ -13,7 +13,7 @@ public class ControllerUser {
     }
     
     public boolean pushUser(User user, String id){
-        if(checkUser(id)){
+        if(!checkUser(id)){
             userStack.push(user);
             Singleton.getInstance().writeUser(userStack);
             return true;     
