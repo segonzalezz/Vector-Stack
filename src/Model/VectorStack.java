@@ -53,14 +53,4 @@ public class VectorStack <T> implements Serializable{
         if(size == array.length)
             array = java.util.Arrays.copyOf(array, size * 2);
     }
-    
-//    public void printlnStack(){
-//        System.out.println("Stack: ");
-//        for (Object element : array) {
-//        if (element != null) {
-//            System.out.print(element + " ");
-//        }
-//    }
-//    System.out.println();
-//    }
 }

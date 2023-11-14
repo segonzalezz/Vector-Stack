@@ -9,10 +9,8 @@ import javax.swing.table.DefaultTableModel;
 
 public class ControllerUser {
     private VectorStack<User> userStack;
-    DefaultTableModel jTable;
     
     public ControllerUser(){
-        this.jTable = jTable;
         userStack = Singleton.getInstance().readUser();
     }
     
