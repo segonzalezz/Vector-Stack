@@ -42,14 +42,31 @@ public void checkSize(){
 now lets to created the serious methods that are:
 ### Push
 ```java
+public void push(T dato){
+  checkSize();
+  array[size++] = dato;
+}
 ```
 ### Pop
 ```java
+public T pop(){
+  if(isEmpty()){
+  throw new IllegalStateException("The Stack is empty");
+  }   
+  T dato = (T) array[--size];
+  array[size] = null;
+  return dato;
+}
 ```
-### Pop
-
-<div align="center">
-  
+### Peek
+```java
+public T peek(){
+  if(isEmpty()){
+  throw new IllegalStateException("The Stack is empty"); 
+  }
+  return (T) array[size -1];
+}
+```
+<div align="center"> 
 ![Alter](images/one.PNG)
-
 </div>
