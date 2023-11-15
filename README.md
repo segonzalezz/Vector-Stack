@@ -77,4 +77,3 @@ public T peek(){
 ![NONE](images/Tree.PNG)
 
 </div>
-and thats it, bye.
