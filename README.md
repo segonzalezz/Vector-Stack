@@ -28,6 +28,9 @@ And respective gets and the others methods:
   }else{
   throw new IndexOutOfBoundsException("Index out of bounds");
 ```
-### Verify the size is equals that 0, created this method:
+Verify the size is equals that 0, created this method:
 ```java
+public boolean isEmpty(){
+return size == 0;
+}
 ```
