@@ -40,7 +40,7 @@ public void checkSize(){
 }
 ```
 <picture>
-
+<center>
 ![Texto alternativo](images/one.PNG)
-
+</center>
 </picture>
