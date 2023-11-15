@@ -36,7 +36,7 @@ public class VectorStack <T> implements Serializable{
     public T pop(){
         if(isEmpty()){
             throw new IllegalStateException("The Stack is empty");
-        }
+        }   
         T dato = (T) array[--size];
         array[size] = null;
         return dato;
