@@ -39,6 +39,9 @@ public void checkSize(){
   array = java.util.Arrays.copyOf(array, size * 2);
 }
 ```
+now lets to created the serious methods that are:
+### Push
+
 <div align="center">
   
 ![Alter](images/one.PNG)
