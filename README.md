@@ -40,5 +40,5 @@ public void checkSize(){
 }
 ```
 <p align="center">
-![center](images/one.PNG)
+![](images/one.PNG)
 </p>
