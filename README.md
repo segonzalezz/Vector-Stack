@@ -39,5 +39,5 @@ public void checkSize(){
   array = java.util.Arrays.copyOf(array, size * 2);
 }
 ```
-![Alt text](images/one.PNG)
+![Center](images/one.PNG)
 
