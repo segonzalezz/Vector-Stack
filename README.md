@@ -39,5 +39,7 @@ public void checkSize(){
   array = java.util.Arrays.copyOf(array, size * 2);
 }
 ```
+<p align="center">
 ![Texto alternativo](images/one.PNG)
+</p>
 
