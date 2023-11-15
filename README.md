@@ -28,9 +28,15 @@ And respective gets and the others methods:
   }else{
   throw new IndexOutOfBoundsException("Index out of bounds");
 ```
-Verify the size is equals that 0, created this method:
+Verify the size is equals that 0, First created this boolean method and the other second method is about check the size of array to expand:
 ```java
 public boolean isEmpty(){
 return size == 0;
 }
+
+public void checkSize(){
+  if(size == array.length)
+  array = java.util.Arrays.copyOf(array, size * 2);
+}
 ```
+
