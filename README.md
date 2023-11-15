@@ -67,6 +67,7 @@ public T peek(){
   return (T) array[size -1];
 }
 ```
+### Pictures
 <div align="center"> 
   
 ![Alter](images/one.PNG)
