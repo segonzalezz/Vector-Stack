@@ -71,7 +71,9 @@ public T peek(){
 <div align="center"> 
   
 ![Alter](images/one.PNG)
+
 ![NAME](images/two.PNG)
+
 ![NONE](images/tree.PNG)
 
 </div>
