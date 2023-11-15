@@ -68,5 +68,7 @@ public T peek(){
 }
 ```
 <div align="center"> 
+  
 ![Alter](images/one.PNG)
+
 </div>
