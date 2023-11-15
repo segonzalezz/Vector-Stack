@@ -18,9 +18,9 @@ public class VectorStack <T> implements Serializable{
     
     public T getIndex(int index) {
         if (index >= 0 && index < size) {
-            return (T) array[index];
+            return (T) array[index];  
         } else {
-            throw new IndexOutOfBoundsException("Index out of bounds");
+             throw new IndexOutOfBoundsException("Index out of bounds");
         }
     }
     
