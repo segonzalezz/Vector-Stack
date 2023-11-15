@@ -1,6 +1,7 @@
 # Vector Stack
 There are two forms to make the Stack Data Structure. The first would be with a Vector
 where the first class that u would be make in the model package:
+
 ```java
 package Model;
 public class VectorStack <T>{
@@ -23,6 +24,10 @@ And respective gets and the others methods:
 
   public T getIndex(int index){
   if(index >= 0 && index < size){
-  return (T) array[index];
+  return (T) array[indThe ex];
   }else{
   throw new IndexOutOfBoundsException("Index out of bounds");
+```
+### Verify the size is equals that 0, created this method:
+```java
+```
