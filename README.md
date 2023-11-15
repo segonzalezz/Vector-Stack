@@ -41,6 +41,12 @@ public void checkSize(){
 ```
 now lets to created the serious methods that are:
 ### Push
+```java
+```
+### Pop
+```java
+```
+### Pop
 
 <div align="center">
   
