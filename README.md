@@ -39,6 +39,6 @@ public void checkSize(){
   array = java.util.Arrays.copyOf(array, size * 2);
 }
 ```
-<p align="center">
+<div align="center">
 ![center](images/one.PNG)
-</p>
+</div>
