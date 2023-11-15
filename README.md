@@ -40,5 +40,7 @@ public void checkSize(){
 }
 ```
 <div align="center">
-![center](images/one.PNG)
+  
+![Alter](images/one.PNG)
+
 </div>
